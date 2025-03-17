@@ -7,12 +7,12 @@ from datetime import datetime, timedelta
 import plotly.graph_objects as go
 
 # Load the PM2.5 model
-with open('pm25_model_7d.pkl', 'rb') as f:
+with open('models/pm25_model_7d.pkl', 'rb') as f:
     model = joblib.load(f)
 
 # Load the PM10 model
 try:
-    with open('catboost_pm10_24h.pkl', 'rb') as f:
+    with open('models/catboost_pm10_24h.pkl', 'rb') as f:
         pm10_model = joblib.load(f)
     pm10_model_loaded = True
     # Get expected feature names if available
